@@ -11,9 +11,14 @@ class AppServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         //
+        $loader = \Illuminate\Foundation\AliasLoader::getInstance();
+        $this->app->bind('ConnectController', 'App\Http\Controllers\ConnectController');
+        $this->app->bind('Form', 'Illuminate\Support\Facades\Form');
+
+
     }
 
     /**
